@@ -29,5 +29,4 @@
             <TextField prefWidth="150"/>
         </HBox>
     </VBox>
-
 </HBox>
