@@ -1,6 +1,3 @@
-// Muhammad Usman Haider.
-// 1811350.
-
 package sample;
 
 import javafx.beans.value.ObservableValue;
@@ -11,12 +8,10 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class Controller implements Initializable
-{
+public class Controller implements Initializable {
     @FXML
     private ListView<Employee> employeeListView;
     @FXML
@@ -26,15 +21,10 @@ public class Controller implements Initializable
     @FXML
     private CheckBox isActiveCheckBox;
 
-
-
-
     @Override
-    public void initialize(URL location, ResourceBundle resources)
-    {
+    public void initialize(URL location, ResourceBundle resources) {
         employeeListView.getSelectionModel().selectedItemProperty().addListener((
-                        ObservableValue < ? extends Worker> ov, Worker old_val, Worker new_val)->
-                {
+                    ObservableValue < ? extends Worker> ov, Worker old_val, Worker new_val)-> {
                     Worker selectedItem = employeeListView.getSelectionModel().getSelectedItem();
 
                     firstNameTextField.setText(((Employee)selectedItem).firstName);
@@ -42,7 +32,6 @@ public class Controller implements Initializable
                     isActiveCheckBox.setSelected(((Employee)selectedItem).isActive);
                 }
         );
-
 
         ObservableList<Employee> items = employeeListView.getItems();
         Employee employee1 = new Employee();
@@ -55,8 +44,7 @@ public class Controller implements Initializable
         items.add(employee1);
         items.add(employee2);
 
-        for(int i = 0; i < 10; i++)
-        {
+        for(int i = 0; i < 10; i++) {
             Employee employee = new Employee();
             employee.firstName = "Generic";
             employee.lastName = "Employee" + " " + i;
